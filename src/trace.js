@@ -46,6 +46,17 @@ $trace = {
 			trackTraceNumber: this.number,
 			zipcode: this.zipcode
 		}, (data) => {
+
+			if(!data) {
+				chrome.runtime.sendMessage({
+					type: 'notify',
+					title: 'DHL Tracking',
+					message: 'The provided barcode was not found'
+				});
+				window.close();
+				return false;
+			}
+
 			this.parseTrace(data);
 		});
 	},
