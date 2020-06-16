@@ -1,0 +1,162 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #F4F4F4;
+
+	margin: 0;
+	padding: 15px;
+}
+
+div.page {
+	background-color: #FFF;
+	box-shadow: 0 0 5px rgba(0,0,0,.3);
+
+	width: 210mm;
+	height: 297mm;
+
+	padding: 10mm;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+	div.page + div.page {
+		margin-top: 10px;
+	}
+
+div.logo {
+	margin-bottom: 30px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+	div.logo > img {
+		max-width: 200px;
+	}
+
+	div.logo > #barcode {
+		font-size: 20px;
+		color: #555;
+	}
+
+div.addresses {
+	display: flex;
+	align-items: flex-start;
+}
+	div.addresses address {
+		white-space: pre;
+		font-style: normal;
+
+		line-height: 1.75;
+
+		flex: 1 1 50%;
+	}
+		div.addresses address[data-label]::before {
+			content: attr(data-label) ':';
+
+			display: block;
+
+			font-size: 80%;
+			font-weight: bold;
+			font-style: italic;
+
+			color: #848484;
+
+			margin-bottom: 4px;
+		}
+
+div.info {
+	margin-top: 25px;
+	padding-top: 25px;
+
+	border-top: 1px solid #C0C0C0;
+}
+	div.info h2 {
+		font-size: 12pt;
+
+		margin: 0;
+		margin-bottom: 15px;
+		padding: 0;
+	}
+
+/**
+ * Label
+ **/
+
+ul.label {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+	ul.label > li {
+		padding: 5px 0;
+
+		display: flex;
+		align-items: center;
+	}
+		ul.label > li[data-label]::before {
+			width: 150px;
+			flex: 0 0 150px;
+			margin-right: 5px;
+
+			color: #808080;
+			font-weight: bold;
+
+			content: attr(data-label) ':';
+		}
+
+		ul.label > li[data-label]::after {
+			color: #848484;
+
+			display: inline-flex;
+			align-items: center;
+
+			margin-left: 5px;
+
+			content: attr(data-after);
+		}
+
+#info-signature img {
+	max-height: 150px;
+	max-width: 200px;
+
+	object-fit: contain;
+}
+
+@page {
+	margin: 0mm;
+	size: A4;
+}
+
+@media print {
+
+	html, body {
+		padding: 0;
+		margin: 0;
+
+		background-color: transparent;
+
+		width: 210mm;
+		height: 297mm;
+	}
+
+	div.page {
+		background-color: transparent;
+		margin: 0;
+
+		box-shadow: none;
+
+		break-inside: avoid;
+		break-after: always;
+	}
+
+}

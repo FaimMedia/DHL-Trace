@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DHL Tracking</title>
+
+		<meta charset="UTF-8">
+
+		<style>
+			@import url(trace.css);
+		</style>
+	</head>
+
+	<body>
+
+		<div class="page">
+
+			<div class="logo">
+				<img src="dhl-logo-normal.svg" alt="" />
+				<div id="barcode"></div>
+			</div>
+
+			<div class="addresses">
+				<address id="address-pickup" data-label="Pickup"></address>
+				<address id="address-delivery" data-label="Delivery"></address>
+			</div>
+
+			<div class="info">
+				<h2>Scan</h2>
+
+				<ul class="label">
+					<li id="info-scan-service" data-label="Service"></li>
+					<li id="info-scan-date" data-label="Scanned on"></li>
+					<li id="info-scan-dimensions" data-label="Dimensions" data-after="cm (L &times; W &times; H)"></li>
+					<li id="info-scan-weight" data-label="Weight" data-after="kg"></li>
+				</ul>
+
+			</div>
+
+			<div class="info">
+				<h2>Signed</h2>
+
+				<ul class="label">
+					<li id="info-signature" data-label="Signature"></li>
+					<li id="info-signed-by" data-label="Signed by"></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<script src="trace.js"></script>
+
+	</body>
+</html>
