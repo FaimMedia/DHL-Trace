@@ -13,7 +13,6 @@
 	},
 	"permissions": [
 		"notifications",
-		"activeTab",
 		"*://api-gw.dhlparcel.nl/*"
 	],
 	"icons": {
