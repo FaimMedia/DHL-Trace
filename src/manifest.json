@@ -1,0 +1,35 @@
+{
+	"name": "DHL Tracking",
+	"author": "FaimMedia B.V.",
+	"version": "1.0",
+	"description": "Get DHL-shipment tracking information",
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"notifications",
+		"activeTab",
+		"*://api-gw.dhlparcel.nl/*"
+	],
+	"icons": {
+		"64": "dhl-icon64.png",
+		"128": "dhl-icon128.png"
+	},
+	"web_accessible_resources": [
+		"trace.html"
+	],
+	"content_scripts": [{
+		"matches": [
+			"*://api-gw.dhlparcel.nl/track-trace*"
+		],
+		"run_at": "document_start",
+		"js": [
+			"contentscript.js"
+		]
+	}]
+}
