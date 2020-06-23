@@ -117,7 +117,15 @@ $trace = {
 
 	// scan
 		if(data.events && data.events.length > 0) {
-			var event = data.events[0];
+			for(var $i = 0; $i < data.events.length; $i++) {
+				event = data.events[$i];
+
+				if(!event.status || event.status != 'DEPART_FACILITY') {
+					continue;
+				}
+
+				break;
+			}
 
 			var scanDateInstance = new Date(event.timestamp);
 
