@@ -14,6 +14,15 @@ HTMLElement.prototype.text = function() {
 	return this;
 };
 
+
+HTMLElement.prototype.html = function() {
+	for(var $i = 0; $i < arguments.length; $i++) {
+		this.innerHTML += arguments[$i];
+	}
+
+	return this;
+};
+
 $trace = {
 
 	number: null,
