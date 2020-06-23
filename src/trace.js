@@ -105,8 +105,8 @@ $trace = {
 
 		address.text(
 			"\n",
-			data.receiver.contactName + "\n",
-			delivery.street + ' ' + delivery.houseNumber + ' ' + delivery.addition + "\n",
+			(data.receiver.contactName) ? data.receiver.contactName + "\n" : '',
+			delivery.street + ' ' + delivery.houseNumber + ' ' + (delivery.addition || '') + "\n",
 			delivery.postalCode + ' ' + delivery.city + "\n",
 			delivery.countryCode
 		);
