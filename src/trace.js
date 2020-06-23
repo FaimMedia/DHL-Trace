@@ -89,7 +89,7 @@ $trace = {
 		var address = document.getElementById('address-pickup');
 
 		var name = document.createElement('b');
-		name.text(data.shipper.name);
+		name.html(data.shipper.name);
 
 		address.appendChild(name);
 
@@ -99,7 +99,7 @@ $trace = {
 		var address = document.getElementById('address-delivery');
 
 		var name = document.createElement('b');
-		name.text(data.receiver.name);
+		name.html(data.receiver.name);
 
 		address.appendChild(name);
 
